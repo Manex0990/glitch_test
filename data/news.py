@@ -24,7 +24,6 @@ class News(SqlAlchemyBase, SerializerMixin, UserMixin):
     categories = orm.relationship("Category",
                                   secondary="association",
                                   backref="news")
-    is_published = sqlalchemy.Column(sqlalchemy.Boolean, default=True)
 
     #def __repr__(self):
     #    return f'<{self.__class__.__name__}> {self.user.name} {self.title} {self.content}'
